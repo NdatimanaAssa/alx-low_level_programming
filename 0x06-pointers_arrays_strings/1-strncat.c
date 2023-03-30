@@ -1,23 +1,32 @@
 #include "main.h"
 /**
- * _memcpy - fuction that copies n bytes from a source to a destination.
- * @dest: destionation for the copying the bytes to.
- * @src: source of the bytes to copy.
- * @n: number of bytes to copy over.
+ * _strncat - concatenate two strings
+ * using at most n bytes from src
+ * @dest: input value
+ * @src: input value
+ * @n: input value
  *
- * Return: a pointer to dest
+ * Return: dest
  */
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_strncat(char *dest, char *src, int n)
 {
-	unsigned int i;
+	int i;
+	int j;
 
 	i = 0;
-
-	while (i < n)
+	while (dest[i] != '\0')
 	{
-		dest[i] = src[i];
 		i++;
 	}
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+	dest[i] = src[j];
+	i++;
+	j++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }
+
 
